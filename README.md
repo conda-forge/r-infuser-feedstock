@@ -14,9 +14,8 @@ Summary: This light-weight templating package provides flexible and  user-friend
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-infuser-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-infuser-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-infuser-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-infuser-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-infuser-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-infuser-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-infuser-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-infuser-feedstock)
 
 Current release info
 ====================
