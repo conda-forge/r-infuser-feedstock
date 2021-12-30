@@ -1,4 +1,4 @@
-{% set version = "0.2.8" %}
+{% set version = '0.2.8' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,13 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: infuser_{{ version }}.tar.gz
-  url:
-    - {{ cran_mirror }}/src/contrib/infuser_{{ version }}.tar.gz
-    - {{ cran_mirror }}/src/contrib/Archive/infuser/infuser_{{ version }}.tar.gz
+  url:     {{ cran_mirror }}/src/contrib/Archive/infuser/infuser_{{ version }}.tar.gz
   sha256: f055f5855bf1b5cc1fc67e335b4c9546d8e97fb90fc743fcf6a3eb87e6d70f1f
 
 build:
+  merge_build_host: True  # [win]
+  number: 1004
   noarch: generic
-  merge_build_host: true  # [win]
-  number: 1003
   rpaths:
     - lib/R/lib/
     - lib/
@@ -24,6 +21,7 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
   run:
@@ -37,19 +35,34 @@ test:
 about:
   home: https://github.com/bart6114/infuser/
   license: MIT
-  summary: This light-weight templating package provides flexible and  user-friendly value substitution in string templates or template files (e.g. SQL files) at runtime.
+  summary: This light-weight templating package provides flexible and user-friendly value substitution
+    in string templates or template files (e.g. SQL files) at runtime.
   license_family: MIT
-
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
     - LICENSE
+
 extra:
   recipe-maintainers:
     - conda-forge/r
     - nick-youngblut
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+
+# Package: infuser
+# Type: Package
+# Title: A Very Basic Templating Engine
+# Version: 0.2.8
+# Date: 2017-10-03
+# Author: Bart Smeets
+# Maintainer: Bart Smeets <bartsmeets86@gmail.com>
+# Description: This light-weight templating package provides flexible and user-friendly value substitution in string templates or template files (e.g. SQL files) at runtime.
+# License: MIT + file LICENSE
+# LazyData: TRUE
+# Suggests: testthat, knitr, rmarkdown, dbplyr, magrittr
+# URL: https://github.com/bart6114/infuser/
+# BugReports: https://github.com/bart6114/infuser/issues
+# RoxygenNote: 6.0.1
+# VignetteBuilder: knitr
+# NeedsCompilation: no
+# Packaged: 2017-10-04 11:33:20 UTC; bart
+# Repository: CRAN
+# Date/Publication: 2017-10-04 11:57:42 UTC
