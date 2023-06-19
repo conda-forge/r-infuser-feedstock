@@ -12,7 +12,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 1005
+  number: 1006
   noarch: generic
   rpaths:
     - lib/R/lib/
