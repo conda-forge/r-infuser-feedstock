@@ -1,11 +1,11 @@
-About r-infuser
-===============
+About r-infuser-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-infuser-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/bart6114/infuser/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-infuser-feedstock/blob/main/LICENSE.txt)
 
 Summary: This light-weight templating package provides flexible and user-friendly value substitution in string templates or template files (e.g. SQL files) at runtime.
 
