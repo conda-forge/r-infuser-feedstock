@@ -1,6 +1,5 @@
 {% set version = '0.2.8' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-infuser
@@ -11,8 +10,7 @@ source:
   sha256: f055f5855bf1b5cc1fc67e335b4c9546d8e97fb90fc743fcf6a3eb87e6d70f1f
 
 build:
-  merge_build_host: True  # [win]
-  number: 1006
+  number: 1007
   noarch: generic
   rpaths:
     - lib/R/lib/
